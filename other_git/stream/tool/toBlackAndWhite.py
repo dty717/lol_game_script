@@ -2,20 +2,20 @@ import cv2
 import argparse
 
 def makeGray(image):
-  image_len = len(image)
-  for i in range(image_len):
-    image_i_len = len(image[i])
-    for j in range(image_i_len):
-      if (image[i][j]>[160,160,160]).all():
-        continue
-      else:
-        image[i][j] = [0, 0, 0]
+	image_len = len(image)
+	for i in range(image_len):
+		image_i_len = len(image[i])
+		for j in range(image_i_len):
+			if (image[i][j]>[160,160,160]).all():
+				continue
+			else:
+				image[i][j] = [0, 0, 0]
 
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-n", "--num", type=str, required=True,
-  help="path to input image where we'll apply template matching")
+	help="path to input image where we'll apply template matching")
 args = vars(ap.parse_args())
 
 #read file
